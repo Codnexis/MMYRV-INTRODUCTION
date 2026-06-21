@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MMYRV Freshers Hub 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --bg: #030712;
+        --card: #0f172a;
+        --card2: #111827;
+        --white: #ffffff;
+        --text: #cbd5e1;
+        --border: rgba(255, 255, 255, 0.08);
+      }
+
+      body {
+        background: var(--bg);
+        color: white;
+        min-height: 100vh;
+        padding: 30px 15px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* Background Glow */
+
+      .bg-circle {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(120px);
+        z-index: -1;
+      }
+
+      .circle-1 {
+        width: 350px;
+        height: 350px;
+        background: #1e3a8a;
+        top: -100px;
+        left: -100px;
+        opacity: 0.4;
+      }
+
+      .circle-2 {
+        width: 350px;
+        height: 350px;
+        background: #312e81;
+        bottom: -100px;
+        right: -100px;
+        opacity: 0.4;
+      }
+
+      /* Main Card */
+
+      .container {
+        max-width: 950px;
+        margin: auto;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        animation: fadeUp 0.8s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Header */
+
+      .header {
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 10px 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .logo-box {
+        width: 110px;
+        height: 110px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 50px;
+        background: linear-gradient(145deg, #111827, #1f2937);
+        border: 1px solid var(--border);
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+      }
+
+      h1 {
+        margin-top: 20px;
+        font-size: 2.8rem;
+        font-weight: 800;
+      }
+
+      .subtitle {
+        margin-top: 12px;
+        color: var(--text);
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      /* Counter */
+
+      .stats-box {
+        margin-bottom: 30px;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 25px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+      }
+
+      .stat-card h2 {
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+      }
+
+      .stat-card p {
+        color: var(--text);
+      }
+
+      /* Form */
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .input-box {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-box label {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #f1f5f9;
+      }
+
+      .full-width {
+        grid-column: 1/-1;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 16px;
+        background: #111827;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        color: white;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #94a3b8;
+      }
+
+      select option {
+        color: black;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: white;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Button */
+
+      button {
+        width: 100%;
+        padding: 17px;
+        border: none;
+        border-radius: 16px;
+        background: white;
+        color: #030712;
+        font-size: 17px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+      }
+
+      /* Info Box */
+
+      .info-box {
+        margin-top: 25px;
+        padding: 18px;
+        border-radius: 18px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      /* Quote */
+
+      .quote-box {
+        margin-top: 25px;
+        text-align: center;
+        padding: 25px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+      }
+
+      .quote-box h3 {
+        margin-bottom: 12px;
+      }
+
+      .quote-box p {
+        color: var(--text);
+        font-style: italic;
+      }
+
+      /* Footer */
+
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #94a3b8;
+        line-height: 1.8;
+      }
+
+      /* Popup */
+
+      .popup {
+        position: fixed;
+        inset: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(8px);
+        z-index: 9999;
+      }
+
+      .popup-content {
+        width: 90%;
+        max-width: 420px;
+        padding: 35px;
+        text-align: center;
+        border-radius: 25px;
+        background: #0f172a;
+        border: 1px solid var(--border);
+        animation: popupShow 0.4s ease;
+      }
+
+      .popup-icon {
+        font-size: 4rem;
+        margin-bottom: 15px;
+      }
+
+      .popup-content h2 {
+        margin-bottom: 10px;
+      }
+
+      .popup-content p {
+        color: var(--text);
+        margin-bottom: 20px;
+      }
+
+      @keyframes popupShow {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Mobile */
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 25px;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .logo-box {
+          width: 90px;
+          height: 90px;
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Background Effects -->
+
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <!-- Main Container -->
+
+    <div class="container">
+      <!-- Header -->
+
+      <div class="header">
+        <div class="badge">🎓 MMYRV Freshers 2026</div>
+
+        <div class="logo-box">🚀</div>
+
+        <h1>MMYRV Freshers Hub</h1>
+
+        <p class="subtitle">
+          Connect • Introduce • Inspire <br />
+          Welcome to the MMYRV Student Community
+        </p>
+      </div>
+
+      <!-- Live Counter -->
+
+      <div class="stats-box">
+        <div class="stat-card">
+          <h2 id="counter">0</h2>
+
+          <p>Students Joined</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+
+      <form
+        id="freshersForm"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <!-- Replace with your Web3Forms Access Key -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="defd80a0-695a-41b0-b2d2-3c087f144c0e"
+        />
+
+        <input
+          type="hidden"
+          name="subject"
+          value="New MMYRV Freshers Submission"
+        />
+
+        <div class="form-grid">
+          <!-- Name -->
+
+          <div class="input-box">
+            <label> Full Name </label>
+
+            <input
+              type="text"
+              name="Full Name"
+              placeholder="👤 Enter Full Name"
+              required
+            />
+          </div>
+
+          <!-- Roll Number -->
+
+          <div class="input-box">
+            <label> Roll Number </label>
+
+            <input
+              type="text"
+              name="Roll Number"
+              placeholder="🆔 Roll Number"
+              required
+            />
+          </div>
+
+          <!-- Course -->
+
+          <div class="input-box">
+            <label> Course </label>
+
+            <select name="Course" required>
+              <option value="">Select Course</option>
+
+              <option>BCA</option>
+              <option>BBA</option>
+              <option>BA</option>
+              <option>B.Com</option>
+              <option>B.Sc</option>
+              <option>MCA</option>
+              <option>MBA</option>
+              <option>BTech</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- City -->
+
+          <div class="input-box">
+            <label> City </label>
+
+            <input type="text" name="City" placeholder="📍 City Name" />
+          </div>
+
+          <!-- Mobile -->
+
+          <div class="input-box">
+            <label> Mobile Number </label>
+
+            <input
+              type="tel"
+              name="Mobile Number"
+              placeholder="📱 Mobile Number"
+            />
+          </div>
+
+          <!-- Email -->
+
+          <div class="input-box">
+            <label> Email Address </label>
+
+            <input type="email" name="Email" placeholder="📧 Email Address" />
+          </div>
+
+          <!-- Instagram -->
+
+          <div class="input-box">
+            <label> Instagram Username </label>
+
+            <input type="text" name="Instagram" placeholder="📸 @username" />
+          </div>
+
+          <!-- Hobbies -->
+
+          <div class="input-box">
+            <label> Hobbies </label>
+
+            <input
+              type="text"
+              name="Hobbies"
+              placeholder="🎯 Gaming, Coding, Music..."
+            />
+          </div>
+
+          <!-- Dream Career -->
+
+          <div class="input-box">
+            <label> Dream Career </label>
+
+            <input
+              type="text"
+              name="Dream Career"
+              placeholder="🚀 Software Engineer"
+            />
+          </div>
+
+          <!-- Favorite Subject -->
+
+          <div class="input-box">
+            <label> Favorite Subject </label>
+
+            <input
+              type="text"
+              name="Favorite Subject"
+              placeholder="📖 Favorite Subject"
+            />
+          </div>
+
+          <!-- About -->
+
+          <div class="input-box full-width">
+            <label> About Yourself </label>
+
+            <textarea
+              name="About Me"
+              placeholder="✍️ Tell us something interesting about yourself..."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+
+          <div class="full-width">
+            <button type="submit">🚀 Submit Introduction</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Info Box -->
+
+      <div class="info-box">
+        💡 Your introduction will be securely sent to the organizer.
+      </div>
+
+      <!-- Quote Section -->
+
+      <div class="quote-box">
+        <h3>⭐ Quote Of The Day</h3>
+
+        <p>"Every expert was once a beginner."</p>
+      </div>
+
+      <!-- Footer -->
+
+      <div class="footer">
+        © 2026 MMYRV Freshers Hub <br />
+        Made with ❤️ for MMYRV Students
+      </div>
+    </div>
+
+    <!-- Success Popup -->
+
+    <div class="popup" id="successPopup">
+      <div class="popup-content">
+        <div class="popup-icon">🎉</div>
+
+        <h2>Thank You!</h2>
+
+        <p>Your introduction has been submitted successfully.</p>
+
+        <button onclick="closePopup()">Awesome 🚀</button>
+      </div>
+    </div>
+
+    <script>
+      // ============================
+      // Student Counter Animation
+      // ============================
+
+      let count = 0;
+      const target = 2026;
+      const counter = document.getElementById("counter");
+
+      const counterInterval = setInterval(() => {
+        count += 17;
+
+        if (count >= target) {
+          count = target;
+          clearInterval(counterInterval);
+        }
+
+        counter.textContent = count;
+      }, 10);
+
+      // ============================
+      // Random Quotes
+      // ============================
+
+      const quotes = [
+        "Every expert was once a beginner.",
+        "Dream big. Start small. Act now.",
+        "Success starts with showing up.",
+        "Your future is created today.",
+        "Learning never exhausts the mind.",
+        "Believe in yourself and keep growing.",
+        "Great things take time and effort.",
+        "College is the beginning of your journey.",
+      ];
+
+      const quoteElement = document.querySelector(".quote-box p");
+
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+      quoteElement.textContent = `"${randomQuote}"`;
+
+      // ============================
+      // Web3Forms Submit
+      // ============================
+
+      const form = document.getElementById("freshersForm");
+      const popup = document.getElementById("successPopup");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector("button");
+
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = "⏳ Submitting...";
+
+        submitBtn.disabled = true;
+
+        try {
+          const formData = new FormData(form);
+
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            popup.style.display = "flex";
+
+            form.reset();
+          } else {
+            alert("Submission failed. Please try again.");
+          }
+        } catch (error) {
+          alert("Network error. Please check your internet connection.");
+        }
+
+        submitBtn.innerHTML = originalText;
+
+        submitBtn.disabled = false;
+      });
+
+      // ============================
+      // Close Popup
+      // ============================
+
+      function closePopup() {
+        popup.style.display = "none";
+      }
+
+      // ============================
+      // ESC Key Close Popup
+      // ============================
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          popup.style.display = "none";
+        }
+      });
+
+      // ============================
+      // Click Outside Popup
+      // ============================
+
+      popup.addEventListener("click", function (e) {
+        if (e.target === popup) {
+          popup.style.display = "none";
+        }
+      });
+
+      // ============================
+      // Welcome Message
+      // ============================
+
+      console.log("🚀 MMYRV Freshers Hub Loaded Successfully");
+    </script>
+  </body>
+</html>
